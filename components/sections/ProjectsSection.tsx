@@ -28,10 +28,10 @@ export default function ProjectsSection() {
                     <span className="text-foreground group-hover:text-accent text-2xl font-bold tracking-tight transition-colors duration-200 md:text-3xl">
                       {project.name}
                     </span>
-                    <span className="text-muted font-mono text-[10px] tracking-widest">
+                    <span className="text-muted font-mono text-xs tracking-widest">
                       {project.type}
                     </span>
-                    <span className="text-muted font-mono text-[10px] tracking-widest">
+                    <span className="text-muted font-mono text-xs tracking-widest">
                       {project.period}
                     </span>
                   </div>

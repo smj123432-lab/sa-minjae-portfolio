@@ -44,7 +44,7 @@ export default function AboutSection() {
             <div className="space-y-6">
               {ABOUT_PARAGRAPHS.map((paragraph, i) => (
                 <Reveal key={i} delay={0.08 + i * 0.08}>
-                  <p className="text-muted text-sm leading-loose md:text-base md:leading-loose">
+                  <p className="text-muted text-base leading-loose md:text-lg md:leading-loose">
                     {paragraph}
                   </p>
                 </Reveal>
@@ -76,11 +76,11 @@ export default function AboutSection() {
                     {item.period}
                   </span>
                   <div className="flex flex-col gap-1">
-                    <span className="text-foreground text-sm font-medium md:text-base">
+                    <span className="text-foreground text-base font-medium md:text-lg">
                       {item.role}
                     </span>
                     {item.description && (
-                      <span className="text-muted text-sm">
+                      <span className="text-muted text-base">
                         {item.description}
                       </span>
                     )}

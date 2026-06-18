@@ -3,8 +3,8 @@ import { SKILLS } from '@/content/skills'
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="px-6 py-32 md:px-12 md:py-40 lg:px-24">
-      <div className="mx-auto w-full max-w-5xl">
+    <section id="skills" className="px-4 py-32 md:px-16 md:py-40 lg:px-[128px]">
+      <div className="w-full">
         {/* 섹션 레이블 */}
         <Reveal delay={0}>
           <p className="text-muted mb-16 font-mono text-xs tracking-widest lowercase">
@@ -27,7 +27,7 @@ export default function SkillsSection() {
                   {group.items.map((item, j) => (
                     <span
                       key={item}
-                      className="text-foreground text-sm md:text-base"
+                      className="text-foreground text-base md:text-lg"
                     >
                       {item}
                       {j < group.items.length - 1 && (
