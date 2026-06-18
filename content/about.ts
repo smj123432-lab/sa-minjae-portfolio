@@ -4,6 +4,18 @@ export const ABOUT_PARAGRAPHS: string[] = [
   '지금은 동작만 하는 코드보다, 왜 이렇게 썼는지 설명할 수 있는 코드를 지향합니다. 현장에서 몸으로 배운 건 끝까지 버티는 것이었고, 개발에서는 그게 끝까지 원인을 추적하고 고치는 태도로 이어졌습니다.',
 ]
 
+export interface SpecEntry {
+  key: string
+  values: string[]
+}
+
+export const BACKGROUND_SPEC: SpecEntry[] = [
+  { key: 'OPERATIONAL_EXP', values: ['2 YEARS (EXCAVATOR / FORKLIFT)'] },
+  { key: 'CORE_LOGIC', values: ['PROCESS_OPTIMIZATION', 'RISK_MANAGEMENT'] },
+  { key: 'BOOTCAMP', values: ['LIKELION FRONTEND 16TH', '2025.11 — 2026.06'] },
+  { key: 'MOTIVATION', values: ['TRANSLATING PHYSICAL', 'PROBLEMS INTO CODE'] },
+]
+
 export interface TimelineItem {
   period: string
   role: string
