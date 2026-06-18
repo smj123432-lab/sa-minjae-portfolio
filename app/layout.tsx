@@ -4,6 +4,7 @@ import { Geist_Mono } from 'next/font/google'
 import Providers from './providers'
 import BackgroundLayer from '@/components/common/BackgroundLayer'
 import CodeBlueprint from '@/components/common/CodeBlueprint'
+import ScrollToTop from '@/components/common/ScrollToTop'
 import './globals.css'
 
 const inter = Inter({
@@ -32,13 +33,14 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${inter.variable} ${geistMono.variable}`}
+      className={`${inter.variable} ${geistMono.variable} scroll-pt-24 scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground min-h-screen antialiased">
         <BackgroundLayer />
         <CodeBlueprint />
         <Providers>{children}</Providers>
+        <ScrollToTop />
       </body>
     </html>
   )
