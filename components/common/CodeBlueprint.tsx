@@ -19,7 +19,7 @@ export default function CodeBlueprint() {
           fontFamily="'Geist Mono', ui-monospace, monospace"
           fontSize="9.5"
           strokeWidth="0.5"
-          opacity="0.15"
+          opacity="0.25"
         >
           {/* ── 아키텍처 다이어그램 ── 우측 상단 */}
           <g transform="translate(760, 110)">
