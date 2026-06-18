@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Geist_Mono } from 'next/font/google'
 import Providers from './providers'
+import BackgroundLayer from '@/components/common/BackgroundLayer'
+import CodeBlueprint from '@/components/common/CodeBlueprint'
 import './globals.css'
 
 const inter = Inter({
@@ -34,6 +36,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground min-h-screen antialiased">
+        <BackgroundLayer />
+        <CodeBlueprint />
         <Providers>{children}</Providers>
       </body>
     </html>

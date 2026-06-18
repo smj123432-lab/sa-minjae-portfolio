@@ -21,6 +21,8 @@
   --border: #e5e5e3;
   --accent: #10b981;
   --accent-foreground: #ffffff;
+  --grid-color: rgba(0, 0, 0, 0.1);
+  --noise-opacity: 0.025;
 }
 
 /* 다크 토큰 — 기획서 v3 확정값 */
@@ -32,6 +34,8 @@
   --border: #232629;
   --accent: #34d399;
   --accent-foreground: #052e1f;
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --noise-opacity: 0.018;
 }
 
 /* Tailwind 토큰 등록 */

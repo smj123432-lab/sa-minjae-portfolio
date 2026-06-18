@@ -8,28 +8,31 @@ export default function HeroSection() {
       className="relative flex min-h-[100dvh] flex-col justify-center px-6 pt-24 pb-16 md:px-12 lg:px-24"
     >
       <div className="mx-auto w-full max-w-5xl">
-        {/* 이름 · 직함 */}
+        {/* 직함 eyebrow */}
         <Reveal delay={0}>
-          <p className="text-muted mb-8 font-mono text-xs tracking-widest lowercase">
-            sa minjae · frontend developer
+          <p className="text-muted mb-6 font-mono text-xs tracking-widest lowercase">
+            frontend developer
           </p>
         </Reveal>
 
-        {/* 원인 */}
+        {/* 이름 — H1 */}
         <Reveal delay={0.1}>
-          <p className="text-muted mb-2 text-xl font-light md:text-2xl">
-            비효율을 견디지 못해서
-          </p>
+          <h1
+            className="text-foreground mb-8 leading-none font-bold break-keep"
+            style={{
+              fontSize: 'clamp(3rem, 11vw, 11rem)',
+              letterSpacing: '-0.03em',
+            }}
+          >
+            SA MINJAE
+          </h1>
         </Reveal>
 
-        {/* 결론 — h1 */}
+        {/* 포지셔닝 */}
         <Reveal delay={0.2}>
-          <h1
-            className="text-foreground mb-10 text-5xl font-bold break-keep md:text-7xl lg:text-8xl"
-            style={{ letterSpacing: '-0.02em' }}
-          >
-            개발자가 됐다.
-          </h1>
+          <p className="text-muted mb-2 text-base md:text-lg">
+            비효율을 견디지 못해서 개발자가 됐다.
+          </p>
         </Reveal>
 
         {/* 서브카피 */}
@@ -42,7 +45,6 @@ export default function HeroSection() {
         {/* CTA */}
         <Reveal delay={0.4}>
           <div className="flex flex-wrap items-center gap-3">
-            {/* Primary CTA — 액센트 1곳 */}
             <a
               href="#projects"
               className="group bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:outline-accent flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -65,8 +67,6 @@ export default function HeroSection() {
                 </svg>
               </span>
             </a>
-
-            {/* Secondary CTA */}
             <a
               href="mailto:smj123432@gmail.com"
               className="border-border text-foreground hover:bg-surface focus-visible:outline-accent rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
