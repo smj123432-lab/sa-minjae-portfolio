@@ -11,7 +11,7 @@ export interface SpecEntry {
 
 export const BACKGROUND_SPEC: SpecEntry[] = [
   { key: 'OPERATIONAL_EXP', values: ['2 YEARS (EXCAVATOR / FORKLIFT)'] },
-  { key: 'CORE_LOGIC', values: ['PROCESS_OPTIMIZATION', 'RISK_MANAGEMENT'] },
+  { key: 'CORE_LOGIC', values: ['DISPATCH_COORDINATION', 'FIELD_SAFETY_MGMT'] },
   { key: 'BOOTCAMP', values: ['LIKELION FRONTEND 16TH', '2025.11 — 2026.06'] },
   { key: 'MOTIVATION', values: ['TRANSLATING PHYSICAL', 'PROBLEMS INTO CODE'] },
 ]

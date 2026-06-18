@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: Props) {
             <p className="text-muted mb-4 font-mono text-sm tracking-widest uppercase">
               Problem
             </p>
-            <p className="text-muted text-sm leading-loose">
+            <p className="text-muted text-base leading-loose">
               {DIGGO_META.problem}
             </p>
           </div>
@@ -96,7 +96,7 @@ export default async function ProjectPage({ params }: Props) {
             <p className="text-muted mb-4 font-mono text-sm tracking-widest uppercase">
               Solution
             </p>
-            <p className="text-muted text-sm leading-loose">
+            <p className="text-muted text-base leading-loose">
               {DIGGO_META.solution}
             </p>
           </div>
@@ -114,7 +114,7 @@ export default async function ProjectPage({ params }: Props) {
           <p className="text-muted mb-4 font-mono text-sm tracking-widest uppercase">
             Tech
           </p>
-          <p className="text-muted mb-8 text-sm leading-loose">
+          <p className="text-muted mb-8 text-base leading-loose">
             {DIGGO_META.tech}
           </p>
           <div className="divide-border flex flex-col divide-y">
@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }: Props) {
                 className="grid grid-cols-[8rem_1fr] gap-6 py-4 md:grid-cols-[10rem_1fr]"
               >
                 <span className="text-muted font-mono text-xs">{category}</span>
-                <span className="text-foreground/80 text-sm">
+                <span className="text-foreground/80 text-base">
                   {items.join('  ·  ')}
                 </span>
               </div>
@@ -153,14 +153,16 @@ export default async function ProjectPage({ params }: Props) {
               >
                 <p
                   className={[
-                    'font-mono text-sm tracking-wide',
+                    'font-mono text-base tracking-wide',
                     note.highlight ? 'text-accent' : 'text-muted',
                   ].join(' ')}
                 >
                   {note.highlight ? '→ ' : ''}
                   {note.title}
                 </p>
-                <p className="text-muted text-sm leading-loose">{note.body}</p>
+                <p className="text-muted text-base leading-loose">
+                  {note.body}
+                </p>
               </div>
             ))}
           </div>
