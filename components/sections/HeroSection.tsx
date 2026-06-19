@@ -215,7 +215,7 @@ export default function HeroSection() {
       <div className="relative">
         <Reveal delay={0}>
           <p className="text-muted mb-6 font-mono text-xs tracking-widest lowercase">
-            frontend developer
+            신입 프론트엔드 개발자
           </p>
         </Reveal>
 

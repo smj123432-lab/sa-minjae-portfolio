@@ -2,7 +2,8 @@ export const CONTACT_META = {
   documentId: 'SAMINJAE_PORTFOLIO_2026',
   status: 'OPEN — SEEKING FIRST POSITION',
   author: 'SA MINJAE',
-  role: 'FRONTEND DEVELOPER',
+  role: 'FRONTEND DEVELOPER — 신입',
+  copyright: '© 2026 SA MINJAE — FRONTEND DEVELOPER',
 }
 
 export interface ContactChannel {

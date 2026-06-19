@@ -39,8 +39,10 @@ export default function RootLayout({
       <body className="bg-background text-foreground min-h-screen antialiased">
         <BackgroundLayer />
         <CodeBlueprint />
-        <Providers>{children}</Providers>
-        <ScrollToTop />
+        <Providers>
+          {children}
+          <ScrollToTop />
+        </Providers>
       </body>
     </html>
   )

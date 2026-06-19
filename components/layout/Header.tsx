@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Sun, Moon, Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 import { useUIStore } from '@/store/uiStore'
+import { useBodyScrollLock } from '@/lib/useBodyScrollLock'
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
@@ -24,17 +26,8 @@ export default function Header() {
     setMounted(true)
   }, [])
 
-  // Body scroll lock
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isMobileMenuOpen])
+  // 모바일 메뉴 스크롤 잠금 — ref-count 훅으로 DiggoTabs 라이트박스 잠금과 충돌 방지
+  useBodyScrollLock(isMobileMenuOpen)
 
   // mounted 이전엔 isDark를 false로 고정 → 서버/클라이언트 초기 렌더 일치
   const isDark = mounted && resolvedTheme === 'dark'
@@ -43,10 +36,13 @@ export default function Header() {
     <>
       <header className="fixed top-4 left-1/2 z-40 w-[calc(100%-2rem)] max-w-3xl -translate-x-1/2">
         <div className="border-border bg-background/80 flex items-center justify-between rounded-full border px-4 py-2.5 backdrop-blur-md">
-          {/* 이름 */}
-          <span className="text-muted font-mono text-xs tracking-widest lowercase">
+          {/* 이름 — 클릭 시 홈으로 */}
+          <Link
+            href="/"
+            className="text-muted hover:text-foreground font-mono text-xs tracking-widest lowercase transition-colors duration-200"
+          >
             sa minjae
-          </span>
+          </Link>
 
           {/* 데스크탑 내비 */}
           <nav

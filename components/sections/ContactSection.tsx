@@ -77,7 +77,7 @@ export default function ContactSection() {
       <Reveal delay={0.24}>
         <div className="border-border/40 mt-16 border-t pt-8">
           <p className="text-muted font-mono text-[10px] tracking-widest">
-            {'© 2026 SA MINJAE — FRONTEND DEVELOPER'}
+            {CONTACT_META.copyright}
           </p>
         </div>
       </Reveal>

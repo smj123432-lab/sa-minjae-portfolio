@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { X, ZoomIn } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { DiggoTab } from '@/content/projects'
+import { useBodyScrollLock } from '@/lib/useBodyScrollLock'
 
 interface DiggoTabsProps {
   tabs: DiggoTab[]
@@ -17,11 +18,14 @@ const SECTIONS = [
 ] as const
 
 export default function DiggoTabs({ tabs }: DiggoTabsProps) {
-  const [activeId, setActiveId] = useState(tabs[0].id)
+  const [activeId, setActiveId] = useState(tabs[0]?.id ?? '')
   const [lightbox, setLightbox] = useState(false)
-  const active = tabs.find((t) => t.id === activeId)!
+  const active = tabs.find((t) => t.id === activeId)
 
-  // ESC로 닫기
+  // 라이트박스 스크롤 잠금 — ref-count 훅으로 Header 모바일 메뉴 잠금과 충돌 방지
+  useBodyScrollLock(lightbox)
+
+  // ESC + 스크롤 잠금을 단일 effect로 통합
   useEffect(() => {
     if (!lightbox) return
     const onKey = (e: KeyboardEvent) => {
@@ -31,13 +35,7 @@ export default function DiggoTabs({ tabs }: DiggoTabsProps) {
     return () => window.removeEventListener('keydown', onKey)
   }, [lightbox])
 
-  // 라이트박스 열릴 때 스크롤 잠금
-  useEffect(() => {
-    document.body.style.overflow = lightbox ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [lightbox])
+  if (!active) return null
 
   return (
     <>
@@ -118,9 +116,9 @@ export default function DiggoTabs({ tabs }: DiggoTabsProps) {
                     </p>
                     <ol className="flex flex-col gap-3.5">
                       {(active[key] as string[]).map((line, i) => (
-                        <li key={i} className="flex gap-3">
+                        <li key={line} className="flex gap-3">
                           <span className="text-muted mt-0.5 shrink-0 font-mono text-[10px]">
-                            0{i + 1}
+                            {String(i + 1).padStart(2, '0')}
                           </span>
                           <p className="text-foreground text-sm leading-relaxed">
                             {line}
