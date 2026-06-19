@@ -1,0 +1,36 @@
+export const ABOUT_PARAGRAPHS: string[] = [
+  '굴착기 현장에서 2년 가까이 일했습니다. 배차는 전화 한 통에 좌우됐고, 쉬는 날에도 오전 5시까지는 일이 들어올지 몰라 마음 편히 쉴 수 없었습니다. 수입과 휴식 모두 제 손으로 정할 수 없는 채로 몸은 갈수록 축났습니다.',
+  '그러다 산재사고로 한동안 일을 쉬게 됐고, 그 기간에 우연히 유튜브에서 개발 영상을 보다가 처음 코드를 만져봤습니다. 현장의 작업은 그날로 끝나면 사라지지만, 코드는 한 번 만들어두면 계속 남아서 다음에 또 쓰일 수 있다는 게 좋았습니다. 그날부터 닥치는 대로 찾아보고 따라 만들어보다가, 부트캠프에 들어가 본격적으로 개발을 시작했습니다.',
+  '지금은 동작만 하는 코드보다, 왜 이렇게 썼는지 설명할 수 있는 코드를 지향합니다. 현장에서 몸으로 배운 건 끝까지 버티는 것이었고, 개발에서는 그게 끝까지 원인을 추적하고 고치는 태도로 이어졌습니다.',
+]
+
+export interface SpecEntry {
+  key: string
+  values: string[]
+}
+
+export const BACKGROUND_SPEC: SpecEntry[] = [
+  { key: 'OPERATIONAL_EXP', values: ['2 YEARS (EXCAVATOR / FORKLIFT)'] },
+  { key: 'CORE_LOGIC', values: ['DISPATCH_COORDINATION', 'FIELD_SAFETY_MGMT'] },
+  { key: 'BOOTCAMP', values: ['LIKELION FRONTEND 16TH', '2025.11 — 2026.06'] },
+  { key: 'MOTIVATION', values: ['TRANSLATING PHYSICAL', 'PROBLEMS INTO CODE'] },
+]
+
+export interface TimelineItem {
+  period: string
+  role: string
+  description?: string
+}
+
+export const TIMELINE: TimelineItem[] = [
+  {
+    period: '2023.05 — 2025.05',
+    role: '굴착기 기사',
+    description: '건설 현장 근무. 비효율적인 배차 구조를 직접 겪었습니다.',
+  },
+  {
+    period: '2025.11 — 2026.05',
+    role: '멋쟁이사자처럼 프론트엔드 16기',
+    description: '부트캠프 수료. ACTIVIO, 사자들의 공부방 팀 프로젝트 참여.',
+  },
+]
