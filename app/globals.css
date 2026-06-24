@@ -12,30 +12,23 @@
 /* class 기반 다크모드 (next-themes) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 라이트 토큰 — 기획서 v3 확정값 */
+/* 다크 전용 토큰 */
 :root {
-  --background: #fafaf9;
-  --surface: #ffffff;
-  --foreground: #18191b;
-  --muted: #6b7280;
-  --border: #e5e5e3;
-  --accent: #10b981;
-  --accent-foreground: #ffffff;
-  --grid-color: rgba(0, 0, 0, 0.1);
-  --noise-opacity: 0.025;
-}
-
-/* 다크 토큰 — 기획서 v3 확정값 */
-.dark {
-  --background: #0b0c0e;
-  --surface: #14161a;
+  --background: #0a0a0a;
+  --surface: #141414;
   --foreground: #e8eaed;
   --muted: #9aa0a6;
   --border: #232629;
-  --accent: #34d399;
-  --accent-foreground: #052e1f;
-  --grid-color: rgba(255, 255, 255, 0.1);
-  --noise-opacity: 0.018;
+  --accent: #38bdf8;
+  --accent-foreground: #082f49;
+
+  /* 섹션 배경 — 단일 배경색으로 통일 */
+  --section-hero: transparent;
+  --section-about: transparent;
+  --section-skills: transparent;
+  --section-projects: transparent;
+  --section-howiwork: transparent;
+  --section-contact: transparent;
 }
 
 /* Tailwind 토큰 등록 */
@@ -48,6 +41,14 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  /* 섹션 배경 토큰 */
+  --color-section-hero: var(--section-hero);
+  --color-section-about: var(--section-about);
+  --color-section-skills: var(--section-skills);
+  --color-section-projects: var(--section-projects);
+  --color-section-howiwork: var(--section-howiwork);
+  --color-section-contact: var(--section-contact);
+
   --font-sans:
     'Pretendard', var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -56,4 +57,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* grain 노이즈 오버레이 — 항상 활성, 모든 콘텐츠 위 */
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+  opacity: 0.04;
 }
