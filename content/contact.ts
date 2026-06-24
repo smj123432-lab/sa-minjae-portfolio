@@ -1,6 +1,7 @@
 export const CONTACT_META = {
   documentId: 'SAMINJAE_PORTFOLIO_2026',
-  status: 'OPEN — SEEKING FIRST POSITION',
+  status: '현장을 아는 개발자, 지금 합류 가능합니다.',
+  statusLines: ['현장을 아는 개발자,', '지금 합류 가능합니다.'],
   author: 'SA MINJAE',
   role: 'FRONTEND DEVELOPER — 신입',
   copyright: '© 2026 SA MINJAE — FRONTEND DEVELOPER',
@@ -22,5 +23,10 @@ export const CONTACT_CHANNELS: ContactChannel[] = [
     label: 'GITHUB',
     value: 'github.com/smj123432-lab',
     href: 'https://github.com/smj123432-lab',
+  },
+  {
+    label: 'BLOG',
+    value: 'velog.io/@ykm123432',
+    href: 'https://velog.io/@ykm123432',
   },
 ]
