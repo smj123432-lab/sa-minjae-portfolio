@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import { Geist_Mono } from 'next/font/google'
 import Providers from './providers'
 import BackgroundLayer from '@/components/common/BackgroundLayer'
-import CodeBlueprint from '@/components/common/CodeBlueprint'
 import ScrollToTop from '@/components/common/ScrollToTop'
+import MouseSpotlight from '@/components/common/MouseSpotlight'
 import './globals.css'
 
 const inter = Inter({
@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'
+  ),
   title: '사민재 | 프론트엔드 개발자',
   description:
     '비효율을 견디지 못해서 개발자가 됐다. 현장에서 본 문제를, 이제 코드로 푼다.',
@@ -38,7 +41,7 @@ export default function RootLayout({
     >
       <body className="bg-background text-foreground min-h-screen antialiased">
         <BackgroundLayer />
-        <CodeBlueprint />
+        <MouseSpotlight />
         <Providers>
           {children}
           <ScrollToTop />
