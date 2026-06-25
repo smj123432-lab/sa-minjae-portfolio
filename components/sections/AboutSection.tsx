@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Reveal from '@/components/common/Reveal'
 import { ABOUT_PARAGRAPHS, IDENTITY_CHIPS } from '@/content/about'
 
@@ -25,34 +26,22 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-12 md:gap-12">
           {/* Left: Photo placeholder — 사진 촬영 후 <Image>로 교체 */}
           <Reveal delay={0.04} className="md:col-span-5">
-            <div className="relative min-h-[400px] overflow-hidden md:min-h-full">
-              {/* Placeholder background */}
-              <div className="bg-foreground/[0.15] border-border/50 absolute inset-0 border" />
+            <div className="relative h-72 overflow-hidden md:h-full md:min-h-[520px]">
+              {/* Field photo */}
+              <Image
+                src="/images/field.jpg"
+                alt="굴착기 현장 작업 중"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 42vw"
+                priority
+              />
 
-              {/* Placeholder indicator */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                <div className="border-border/40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-muted/40"
-                    aria-hidden="true"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <p className="text-muted/40 font-mono text-[10px] tracking-[0.25em] uppercase">
-                  이미지 예정
-                </p>
-              </div>
+              {/* Dark gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-              {/* Display text overlay — 사진 추가 후에도 유지 */}
-              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/50 to-transparent p-7 pt-16">
+              {/* FROM FIELD / TO CODE. text overlay */}
+              <div className="absolute right-0 bottom-0 left-0 p-7 pt-16">
                 <span className="block text-sm leading-none font-light text-white/40">
                   FROM
                 </span>
