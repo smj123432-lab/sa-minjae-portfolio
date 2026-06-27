@@ -108,7 +108,7 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      className="bg-section-skills border-border/40 border-t px-4 py-32 md:py-40"
+      className="bg-section-skills border-border/40 border-t px-4 pt-32 pb-16 md:pt-40 md:pb-20"
     >
       <div className="mx-auto max-w-4xl">
         {/* 섹션 헤더 */}

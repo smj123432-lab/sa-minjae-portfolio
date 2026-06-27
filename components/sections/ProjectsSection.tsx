@@ -26,6 +26,25 @@ import type { ComponentType } from 'react'
 
 type IconComponent = ComponentType<{ size?: number; className?: string }>
 
+const SHORT_LABEL: Record<string, string> = {
+  HTML: 'HTML',
+  'CSS / SCSS': 'CSS',
+  'JavaScript (ES6+)': 'JS',
+  TypeScript: 'TS',
+  'React.js': 'React',
+  'Next.js': 'Next.js',
+  'Tailwind CSS': 'Tailwind',
+  Supabase: 'Supabase',
+  'TanStack Query': 'TanStack',
+  Zustand: 'Zustand',
+  Zod: 'Zod',
+  Vercel: 'Vercel',
+  Bun: 'Bun',
+  Claude: 'Claude',
+  'Claude Code': 'C.Code',
+  Gemini: 'Gemini',
+}
+
 const ICON_MAP: Record<string, IconComponent> = {
   HTML: SiHtml5,
   'CSS / SCSS': SiCss,
@@ -57,12 +76,14 @@ function StackIcon({
   const Icon = ICON_MAP[tech]
   if (!Icon) return null
 
+  const label = SHORT_LABEL[tech] ?? tech
+
   return (
     <button
       type="button"
       onClick={onToggle}
       aria-label={`${tech} 필터 ${active ? '해제' : '추가'}`}
-      className="group/icon relative"
+      className="group/icon relative flex flex-col items-center gap-0.5"
     >
       <span
         className={[
@@ -79,6 +100,17 @@ function StackIcon({
           }
         />
       </span>
+      <span
+        className={[
+          'font-mono text-[8px] leading-none transition-colors duration-200',
+          active
+            ? 'text-accent'
+            : 'text-foreground/35 group-hover/icon:text-foreground/70',
+        ].join(' ')}
+      >
+        {label}
+      </span>
+      {/* 데스크탑 호버 툴팁 */}
       <span className="bg-foreground text-background pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded px-1.5 py-0.5 font-mono text-[9px] whitespace-nowrap opacity-0 transition-opacity duration-150 group-hover/icon:opacity-100">
         {tech}
       </span>
@@ -245,7 +277,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="bg-section-projects border-border/40 border-t px-4 py-32 md:px-16 md:py-40 lg:px-[128px]"
+      className="bg-section-projects border-border/40 border-t px-4 pt-16 pb-32 md:px-16 md:pt-20 md:pb-40 lg:px-[128px]"
     >
       <div className="w-full">
         {/* 필터 칩 */}
