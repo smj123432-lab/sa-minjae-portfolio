@@ -166,6 +166,15 @@ export const DIGGO_AI_PHASES: AIPhase[] = [
       },
     ],
   },
+  {
+    phase: 'QA',
+    tools: [
+      {
+        name: 'Claude Code + Playwright',
+        desc: '4개 역할(공개·기사·소장·관리자) 전체 화면을 수동으로 커버하기 어려워 Python Playwright 기반 QA 스크립트를 구축했습니다. Claude Code로 테스트 시나리오를 설계하고 스크립트를 작성해 모바일 뷰포트 전수 검사·콘솔 에러·접근성 감지를 실행했습니다.',
+      },
+    ],
+  },
 ]
 
 export const DIGGO_TABS: DiggoTab[] = [
