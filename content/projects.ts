@@ -70,7 +70,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
       'Claude Code',
       'Gemini',
     ],
-    deployUrl: 'https://diggo-zr4b.vercel.app/',
+    deployUrl: 'https://diggo.vercel.app',
     githubUrl: 'https://github.com/smj123432-lab/diggo',
   },
   {
@@ -228,7 +228,7 @@ export const DIGGO_META = {
     { category: '외부 API', items: ['카카오맵 API (주소 검색, 지도 렌더링)'] },
   ],
   githubUrl: 'https://github.com/smj123432-lab/diggo',
-  deployUrl: 'https://diggo-zr4b.vercel.app/',
+  deployUrl: 'https://diggo.vercel.app',
   archImage: '/images/diggo/hero_screenshot.png',
   intro:
     '현장의 배차는 아직도 전화 한 통과 수기 장부로 돌아갑니다. 약속된 작업이 당일 취소돼도 기사는 보상받을 길이 없고, 소장은 처음 연락하는 기사가 신뢰할 수 있는 사람인지 알 방법이 없습니다. 매번 같은 불안을 안고 일이 시작됩니다. Diggo는 이 문제에서 출발했습니다. 기사와 소장이 서로를 평가하는 **신뢰 배지 시스템**과 작업 내역이 투명하게 남는 **디지털 장부**로 이 불신을 끊습니다. 노쇼가 반복되면 페널티가 누적되어 매칭 우선순위에서 자연히 멀어지고, 평점이 쌓인 기사는 다음 일을 더 쉽게 구합니다. 전화 대신 **시스템이 신뢰를 기록합니다.**',
@@ -538,7 +538,7 @@ export const ACTIVIO_V1_META = {
     {
       tech: 'Next.js (App Router)',
       reason:
-        '도장 목록, 대회일정 등 공개 데이터는 검색 엔진에 노출되어야 해 SSR이 필수였고, generateMetadata로 페이지별 title, OG 태그를 서버에서 렌더링해 SEO를 확보했습니다. App Router의 Server Component와 use cache + revalidateTag를 조합하면 페이지 성격에 따라 캐싱 전략을 세밀하게 분리할 수 있어 선택했습니다. 단일 레이아웃 중첩(layout.tsx)으로 공통 네비, 사이드바 구조도 자연스럽게 표현됩니다.',
+        '도장 목록, 대회일정 등 공개 데이터는 검색 엔진에 노출되어야 해 SSR이 필수였습니다. generateMetadata로 페이지별 title, OG 태그를 서버에서 렌더링해 SEO를 확보했습니다. App Router의 Server Component와 use cache + revalidateTag를 조합하면 페이지 성격에 따라 캐싱 전략을 세밀하게 분리할 수 있어 선택했습니다. 단일 레이아웃 중첩으로 공통 네비, 사이드바 구조도 자연스럽게 표현됩니다.',
     },
     {
       tech: 'TypeScript',
