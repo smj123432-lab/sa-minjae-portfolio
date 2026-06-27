@@ -15,12 +15,11 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiSupabase,
-  SiGit,
-  SiGithub,
   SiVercel,
   SiBun,
-  SiFigma,
-  SiNotion,
+  SiClaude,
+  SiGooglegemini,
+  SiZod,
 } from 'react-icons/si'
 import { Code2, Layers } from 'lucide-react'
 import type { ComponentType } from 'react'
@@ -38,12 +37,12 @@ const ICON_MAP: Record<string, IconComponent> = {
   Supabase: SiSupabase,
   'TanStack Query': Code2,
   Zustand: Layers,
-  Git: SiGit,
-  GitHub: SiGithub,
+  Zod: SiZod,
   Vercel: SiVercel,
   Bun: SiBun,
-  Figma: SiFigma,
-  Notion: SiNotion,
+  Claude: SiClaude,
+  'Claude Code': SiClaude,
+  Gemini: SiGooglegemini,
 }
 
 function StackIcon({

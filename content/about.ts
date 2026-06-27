@@ -39,6 +39,6 @@ export const TIMELINE: TimelineItem[] = [
   {
     period: '2025.11 — 2026.05',
     role: '멋쟁이사자처럼 프론트엔드 16기',
-    description: '부트캠프 수료. ACTIVIO, 사자들의 공부방 팀 프로젝트 참여.',
+    description: '부트캠프 수료. ACTIVIO, 사자들의 공부방 팀 프로젝트 참여,',
   },
 ]

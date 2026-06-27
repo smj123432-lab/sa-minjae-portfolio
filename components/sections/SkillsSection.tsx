@@ -12,15 +12,13 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiSupabase,
-  SiGit,
-  SiGithub,
   SiVercel,
-  SiFigma,
-  SiNotion,
   SiZod,
   SiBun,
+  SiClaude,
+  SiGooglegemini,
 } from 'react-icons/si'
-import { Code2, Layers, FlaskConical } from 'lucide-react'
+import { Code2, Layers } from 'lucide-react'
 import type { ComponentType } from 'react'
 
 type IconComp = ComponentType<{
@@ -41,13 +39,11 @@ const ICON_CONFIG: Record<string, { icon: IconComp; color: string }> = {
   Zustand: { icon: Layers, color: 'currentColor' },
   Zod: { icon: SiZod, color: '#3068B7' },
   Supabase: { icon: SiSupabase, color: '#3ECF8E' },
-  Git: { icon: SiGit, color: '#F05032' },
-  GitHub: { icon: SiGithub, color: 'currentColor' },
   Vercel: { icon: SiVercel, color: 'currentColor' },
-  Figma: { icon: SiFigma, color: '#F24E1E' },
-  Notion: { icon: SiNotion, color: 'currentColor' },
-  Playwright: { icon: FlaskConical, color: '#2EAD33' },
   Bun: { icon: SiBun, color: '#FBF0DF' },
+  Claude: { icon: SiClaude, color: '#CC785C' },
+  'Claude Code': { icon: SiClaude, color: '#CC785C' },
+  Gemini: { icon: SiGooglegemini, color: '#8AB4F8' },
 }
 
 function SkillCard({ item }: { item: SkillItem }) {
