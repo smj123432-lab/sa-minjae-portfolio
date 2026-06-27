@@ -1,7 +1,7 @@
 export const CONTACT_META = {
   documentId: 'SAMINJAE_PORTFOLIO_2026',
-  status: '현장을 아는 개발자, 지금 합류 가능합니다.',
-  statusLines: ['현장을 아는 개발자,', '지금 합류 가능합니다.'],
+  status: '그 비효율, 이제 코드로 풉니다.',
+  statusLines: ['그 비효율,', '이제 코드로 풉니다.'],
   author: 'SA MINJAE',
   role: 'FRONTEND DEVELOPER — 신입',
   copyright: '© 2026 SA MINJAE — FRONTEND DEVELOPER',
