@@ -46,7 +46,13 @@ const ICON_CONFIG: Record<string, { icon: IconComp; color: string }> = {
   Gemini: { icon: SiGooglegemini, color: '#8AB4F8' },
 }
 
-function SkillCard({ item }: { item: SkillItem }) {
+function SkillCard({
+  item,
+  hideBadge,
+}: {
+  item: SkillItem
+  hideBadge?: boolean
+}) {
   const { toggleStackFilter } = useUIStore()
   const config = ICON_CONFIG[item.name]
   const Icon = config?.icon
@@ -59,7 +65,7 @@ function SkillCard({ item }: { item: SkillItem }) {
 
   const inner = (
     <>
-      {count > 0 && (
+      {count > 0 && !hideBadge && (
         <span className="bg-accent absolute top-2 right-2 min-w-[20px] rounded-full px-1.5 text-center font-mono text-[10px] leading-[18px] font-bold text-black">
           {count}
         </span>
@@ -135,7 +141,11 @@ export default function SkillsSection() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {group.items.map((item) => (
-                    <SkillCard key={item.name} item={item} />
+                    <SkillCard
+                      key={item.name}
+                      item={item}
+                      hideBadge={group.category === 'AI 활용'}
+                    />
                   ))}
                 </div>
               </div>

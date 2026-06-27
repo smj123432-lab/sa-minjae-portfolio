@@ -33,7 +33,7 @@ export const SKILLS: SkillGroup[] = [
     ],
   },
   {
-    category: 'AI',
+    category: 'AI 활용',
     items: [
       { name: 'Claude', usedIn: ['diggo', 'activio-v1'] },
       { name: 'Claude Code', usedIn: ['diggo', 'activio-v2'] },
