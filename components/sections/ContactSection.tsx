@@ -1,4 +1,4 @@
-import { Mail, GitBranch, PenLine, ArrowUpRight, Download } from 'lucide-react'
+import { Mail, GitBranch, PenLine, ArrowUpRight } from 'lucide-react'
 import Reveal from '@/components/common/Reveal'
 import { CONTACT_META, CONTACT_CHANNELS } from '@/content/contact'
 import type { ComponentType } from 'react'
@@ -27,28 +27,19 @@ export default function ContactSection() {
 
       {/* Headline */}
       <Reveal delay={0.06}>
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <h2
-            className="font-sans leading-[1.1] font-bold text-white"
-            style={{
-              fontSize: 'clamp(1.8rem, 3.8vw, 4rem)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            {CONTACT_META.statusLines.map((line, i) => (
-              <span key={i} className="block">
-                {line}
-              </span>
-            ))}
-          </h2>
-          <a
-            href="/resume.pdf"
-            download
-            className="border-accent/40 text-accent hover:bg-accent/10 inline-flex shrink-0 items-center gap-1.5 border px-4 py-2 font-mono text-xs transition-colors duration-200"
-          >
-            RESUME <Download size={11} />
-          </a>
-        </div>
+        <h2
+          className="mb-16 font-sans leading-[1.1] font-bold text-white"
+          style={{
+            fontSize: 'clamp(1.8rem, 3.8vw, 4rem)',
+            letterSpacing: '-0.02em',
+          }}
+        >
+          {CONTACT_META.statusLines.map((line, i) => (
+            <span key={i} className="block">
+              {line}
+            </span>
+          ))}
+        </h2>
       </Reveal>
 
       {/* Link cards */}
