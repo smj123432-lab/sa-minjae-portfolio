@@ -4,14 +4,18 @@ import { ABOUT_PARAGRAPHS, IDENTITY_CHIPS } from '@/content/about'
 
 function hl(text: string) {
   const parts = text.split(/\*\*(.+?)\*\*/g)
-  return parts.map((part, i) =>
-    i % 2 === 1 ? (
-      <span key={i} className="text-accent font-medium">
-        {part}
-      </span>
-    ) : (
-      part
-    )
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="text-accent font-semibold not-italic">
+            {part}
+          </strong>
+        ) : (
+          part
+        )
+      )}
+    </>
   )
 }
 
@@ -41,7 +45,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
               {/* FROM FIELD / TO CODE. text overlay */}
-              <div className="absolute right-0 bottom-0 left-0 p-7 pt-16">
+              <div className="absolute right-0 bottom-0 left-0 z-10 p-7 pt-16">
                 <span className="block text-sm leading-none font-light text-white/40">
                   FROM
                 </span>
@@ -66,7 +70,10 @@ export default function AboutSection() {
             <div className="bg-background/80 mb-8 space-y-6 px-6 py-7 backdrop-blur-sm md:px-8">
               {ABOUT_PARAGRAPHS.map((paragraph, i) => (
                 <Reveal key={i} delay={0.1 + i * 0.09}>
-                  <p className="text-foreground/60 text-base leading-loose md:text-lg md:leading-loose">
+                  <p
+                    className="text-foreground/60 text-base leading-loose md:text-lg md:leading-loose"
+                    aria-label={paragraph.replace(/\*\*(.+?)\*\*/g, '$1')}
+                  >
                     {hl(paragraph)}
                   </p>
                 </Reveal>

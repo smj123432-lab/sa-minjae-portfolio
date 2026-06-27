@@ -39,7 +39,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} scroll-pt-24 scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground min-h-screen antialiased">
+      <body className="bg-background text-foreground min-h-screen [scrollbar-gutter:stable] antialiased">
         <BackgroundLayer />
         <MouseSpotlight />
         <Providers>

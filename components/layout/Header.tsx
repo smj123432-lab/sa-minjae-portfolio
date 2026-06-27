@@ -32,7 +32,7 @@ export default function Header() {
     <>
       {/* ── 데스크탑: pill nav ── */}
       <nav
-        className="border-border/60 bg-background/80 fixed top-4 right-6 z-40 hidden items-center gap-1 rounded-full border px-2 py-1.5 backdrop-blur-md md:flex"
+        className="border-border/60 bg-background/80 fixed top-4 right-4 z-40 hidden items-center gap-1 rounded-full border px-2 py-1.5 backdrop-blur-md md:flex"
         aria-label="메인 내비게이션"
       >
         {NAV_LINKS.map((link) => {
