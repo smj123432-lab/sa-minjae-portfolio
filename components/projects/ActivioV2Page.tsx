@@ -13,6 +13,7 @@ import {
   InfoRow,
   StatusDot,
   ProjectLinks,
+  ContributionBadges,
   StackPills,
   TechRationale,
   BackLink,
@@ -69,6 +70,10 @@ export default function ActivioV2Page() {
         <p className="text-foreground/70 font-mono text-sm">
           {ACTIVIO_V2_META.role}
         </p>
+      </InfoRow>
+
+      <InfoRow label="기여도">
+        <ContributionBadges items={ACTIVIO_V2_META.contribution} />
       </InfoRow>
 
       <div className="mb-10">

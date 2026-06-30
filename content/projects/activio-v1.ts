@@ -85,7 +85,11 @@ export const ACTIVIO_V1_META = {
     'Vercel',
     'Claude',
   ],
-  contribution: [] as { label: string; percent: number }[], // TODO: 기여도 입력
+  contribution: [
+    { label: '기획', percent: 50 },
+    { label: '디자인', percent: 30 },
+    { label: '개발', percent: 40 },
+  ],
   features: [] as string[], // TODO: 주요 기능 목록
 }
 
