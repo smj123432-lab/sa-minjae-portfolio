@@ -98,7 +98,7 @@ export default function DiggoPage() {
       )}
 
       <div className="mb-10">
-        <SectionHeading>트러블슈팅</SectionHeading>
+        <SectionHeading>트러블슈팅 및 성능개선</SectionHeading>
         <div className="bg-border/40 mb-8 grid grid-cols-1 gap-px sm:grid-cols-3">
           {DIGGO_METRICS.map((m) => (
             <MetricCard key={m.label} {...m} />

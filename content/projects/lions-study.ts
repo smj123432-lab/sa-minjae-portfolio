@@ -33,7 +33,11 @@ export const LIONS_STUDY_META = {
     '/images/lions-study/screenshot5.png',
   ],
   displayStack: ['HTML', 'CSS / SCSS', 'JavaScript (ES6+)', 'Vite'],
-  contribution: [] as { label: string; percent: number }[], // TODO: 팀 기여도 입력 예정
+  contribution: [
+    { label: '기획', percent: 25 },
+    { label: '디자인', percent: 25 },
+    { label: '개발', percent: 30 },
+  ],
   features: [] as string[], // TODO: 주요 기능 목록
 }
 

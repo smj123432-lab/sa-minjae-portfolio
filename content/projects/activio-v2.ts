@@ -83,7 +83,11 @@ export const ACTIVIO_V2_META = {
     'Claude Code',
     'Gemini',
   ],
-  contribution: [] as { label: string; percent: number }[],
+  contribution: [
+    { label: '기획', percent: 50 },
+    { label: '디자인', percent: 50 },
+    { label: '개발', percent: 40 },
+  ],
 }
 
 export const ACTIVIO_V2_METRICS: MetricItem[] = [
