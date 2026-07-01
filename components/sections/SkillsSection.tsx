@@ -29,7 +29,7 @@ type IconComp = ComponentType<{
 
 const ICON_CONFIG: Record<string, { icon: IconComp; color: string }> = {
   HTML: { icon: SiHtml5, color: '#E34F26' },
-  'CSS / SCSS': { icon: SiCss, color: '#1572B6' },
+  CSS: { icon: SiCss, color: '#1572B6' },
   'JavaScript (ES6+)': { icon: SiJavascript, color: '#F7DF1E' },
   TypeScript: { icon: SiTypescript, color: '#3178C6' },
   'React.js': { icon: SiReact, color: '#61DAFB' },
