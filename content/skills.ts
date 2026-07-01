@@ -13,7 +13,7 @@ export const SKILLS: SkillGroup[] = [
     category: 'Front-End',
     items: [
       { name: 'HTML', usedIn: ['lions-study'] },
-      { name: 'CSS / SCSS', usedIn: ['lions-study'] },
+      { name: 'CSS', usedIn: ['lions-study'] },
       { name: 'JavaScript (ES6+)', usedIn: ['lions-study'] },
       { name: 'TypeScript', usedIn: ['diggo', 'activio-v1', 'activio-v2'] },
       { name: 'React.js', usedIn: ['diggo', 'activio-v1', 'activio-v2'] },
