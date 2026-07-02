@@ -120,18 +120,18 @@ export const DIGGO_META = {
 // cacheComponents + "use cache" 적용 전후 — Lighthouse 실측
 export const DIGGO_METRICS: MetricItem[] = [
   {
-    label: 'LCP (최대 콘텐츠풀 페인트)',
-    before: '9.0s',
-    after: '4.4s',
-    delta: '-51%',
+    label: 'LCP 데스크탑',
+    before: '5.4s',
+    after: '0.9s',
+    delta: '-83%',
   },
   {
-    label: 'TBT (메인 스레드 블로킹)',
-    before: '70ms',
-    after: '0ms',
-    delta: '-100%',
+    label: 'LCP 모바일',
+    before: '4.6s',
+    after: '2.5s',
+    delta: '-46%',
   },
-  { label: 'Performance Score', before: '73점', after: '83점', delta: '+10점' },
+  { label: 'Performance Score', before: '76점', after: '99점', delta: '+23점' },
 ]
 
 export const DIGGO_AI_PHASES: AIPhase[] = [
@@ -181,22 +181,22 @@ export const DIGGO_TABS: DiggoTab[] = [
   {
     id: 'perf-lcp',
     label: '[01_LCP]',
-    title: 'LCP 9.0s → 4.4s 성능 최적화',
-    imageSrc: '/images/diggo/diggo_lcp_cache_region_fix.png',
+    title: 'LCP 5.4s → 0.9s 성능 최적화',
+    imageSrc: '/images/diggo/lcp_ssr_diagram.png',
     issue: [
-      '일감 목록 페이지 진입마다 캐시 없이 Supabase를 3회 조회 (일감 목록·총 개수·사용자 프로필)',
-      'Vercel 배포 리전(미국 동부)과 Supabase DB(서울) 간 왕복 지연이 쿼리마다 200~300ms씩 누적',
-      '세 쿼리가 매 요청마다 직렬 실행돼 DB 대기만 최소 600~900ms 발생, LCP 9.0s 측정',
+      'TanStack Query HydrationBoundary 방식 사용으로 초기 HTML에 일감 카드가 없어 React hydration 완료 이후에야 LCP가 측정됨',
+      'Vercel 함수 리전이 미국 동부(iad1)로 설정되어 서울 Supabase DB와의 왕복 지연이 매 요청마다 누적됨',
+      'Noto Sans KR 4가지 굵기(400·500·700·900) 로딩으로 woff2 파일 10개가 critical path에 포함, 폰트 로딩이 LCP를 차단',
     ],
     resolution: [
-      '"use cache" + cacheLife·cacheTag로 공개 일감 데이터를 서버 사이드 캐싱, 반복 요청 시 DB 미조회',
-      'Vercel 배포 리전을 icn1(서울)으로 전환해 Supabase와의 왕복 지연을 수십 ms 수준으로 단축',
-      'Next.js 16 cacheComponents: true로 Partial Prerender 활성화, 캐시된 정적 쉘을 즉시 응답',
+      'HydrationBoundary를 제거하고 SSR initialData prop 방식으로 전환해 서버 렌더링 카드를 초기 HTML에 직접 포함',
+      'Vercel 함수 리전을 인천(icn1)으로 이전해 Supabase(서울)와의 네트워크 왕복 지연을 제거',
+      'Noto Sans KR 굵기를 400·700으로 축소하고 preload 추가, critical path 폰트 파일을 10개에서 4개로 감소',
     ],
     result: [
-      'LCP 9.0s → 4.4s (51% 감소), TBT 70ms → 0ms',
-      'Lighthouse Performance 73 → 83',
-      '캐시 히트 시 DB 조회 없이 응답, 이후 요청부터 사실상 지연 제거',
+      '데스크탑 LCP 5.4s → 0.9s (−83%)',
+      'Lighthouse Performance 76 → 99',
+      '모바일 LCP 4.6s → 2.5s (−46%)',
     ],
   },
   {
